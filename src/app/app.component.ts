@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NavbarComponent } from "./Features/layout/navbar/navbar.component";
+import { FooterComponent } from "./Features/layout/footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
