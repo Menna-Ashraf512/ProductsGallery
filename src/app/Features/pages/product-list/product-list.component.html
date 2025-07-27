@@ -1,6 +1,9 @@
 <section>
   <div class="h-96 w-full dark:dark-pattern  pattern flex justify-center items-center">
-    <h2 class="font-bold tracking-wider backdrop:blur-lg  dark:text-fuchsia-50 bg-[#b28a5999] dark:bg-[#b28a5992] rounded-md p-2 font-mono text-3xl"><a routerLink="/home">HOME</a> / <a routerLink="/productList">PRODUCTS</a></h2>
+    <h2
+      class="font-bold tracking-wider backdrop:blur-lg  dark:text-fuchsia-50 bg-[#b28a5999] dark:bg-[#b28a5992] rounded-md p-2 font-mono text-3xl">
+      <a routerLink="/home">HOME</a> / <a routerLink="/productList">PRODUCTS</a>
+    </h2>
   </div>
   <div class="container my-10">
     <div class="flex justify-between mx-auto gap-x-9">
@@ -46,10 +49,19 @@
         </div>
       </div>
     </div>
+    @let filteredProducts = (secondArrayProducts | search:text);
+
+    @if (filteredProducts.length > 0) {
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
-      @for (item of products | search:text; track item.id) {
+      @for (item of filteredProducts; track item.id) {
       <app-card-product [product]="item"></app-card-product>
       }
     </div>
+    } @else {
+    <div class="text-center text-gray-500 dark:text-gray-200 mt-10 text-lg font-medium">
+      🔍 No items found matching your search.
+    </div>
+    }
+
   </div>
 </section>
