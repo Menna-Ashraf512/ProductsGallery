@@ -16,3 +16,8 @@ body {
 .dark body {
   @apply bg-black/75 text-white; 
 }
+
+::selection {
+  background-color: #B28A59; 
+  color: white;             
+}
