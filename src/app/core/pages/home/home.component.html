@@ -1,1 +1,46 @@
-<p>home works!</p>
+<!-- hero section -->
+<section class="pt-28">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-10 gap-8">
+
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
+                All Your Favorite Products<br />
+                In One Place.
+            </h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-300 text-lg">
+                Browse curated fashion items for every mood, every season, and every style. No noise — just quality.
+            </p>
+            <div class="mt-6 flex justify-center md:justify-start gap-4">
+                <a [routerLink]="['/productList']"
+                    class="px-6 py-3 duration-300  ease-in-out bg-black text-white rounded-full hover:bg-white hover:text-black border border-black dark:hover:bg-[#B28A59] transition">
+                    Explore Products
+                </a>
+                <a
+                    class="px-6 py-3 border duration-300  ease-in-out border-black dark:border-white text-black dark:text-white rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2">
+            <img src="images/pexels-arina-krasnikova-5424922.jpg" alt="Browse fashion"
+                class="w-full max-w-md mx-auto rounded-xl shadow-md" />
+        </div>
+    </div>
+</section>
+<!-- section product -->
+<section class="min-h-screen py-32">
+    <div class="container">
+        <h2 class="text-4xl font-semibold">Selected for You</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
+            @for (item of products ; track item.id) {
+            <app-card-product [product]="item"></app-card-product>
+            }
+        </div>
+        <div class="text-center">
+            <button routerLink="/productList"
+                class="p-3 rounded-md duration-500 border border-black dark:border-[#B28A59] hover:text-white hover:dark:text-[#cc924a] hover:dark:bg-transparent hover:bg-transparent  hover:bg-black dark:bg-[#B28A59] text-black">View
+                All Product <i class="fa-solid fa-angles-right"></i></button>
+        </div>
+    </div>
+</section>

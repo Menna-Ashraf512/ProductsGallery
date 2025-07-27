@@ -1,1 +1,31 @@
-<p>product-details works!</p>
+@if(detailsProduct){
+<section>
+    <div class="container pt-40 pb-10">
+        <h1 class="text-center text-3xl font-bold text-main mt-2">Details Product</h1>
+        <div class="grid grid-cols-12 gap-4 place-items-center">
+            <div class="col-span-3 w-full">
+                <img class="rounded-lg" [src]="detailsProduct.image">
+            </div>
+            <div class="col-span-9 w-full">
+                <div class="flex flex-col gap-y-4">
+                    <h2>{{detailsProduct.title}}</h2>
+                    <p class="text-slate-500 dark:text-green-50">{{detailsProduct.description}}</p>
+                    <h3> {{detailsProduct.category}}</h3>
+                    <div class="flex justify-between mb-3">
+                        <p>{{detailsProduct.price}} $</p>
+                        <div class="flex items-baseline">
+                            @for (num of [1,2,3,4,5].slice(0 , detailsProduct.rating.rate); track $index) {
+                            <span><i class="text-yellow-500 fa fa-star text-main"></i></span>
+                            }
+                            @if(detailsProduct.rating.rate% 1!==0){
+                            <i class="fa-solid text-yellow-500 fa-star-half-stroke me-1"></i>
+                            }
+                            <span class="text-slate-200 ">{{detailsProduct.rating.rate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}

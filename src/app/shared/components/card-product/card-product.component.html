@@ -1,0 +1,18 @@
+<div class="card w-full max-w-xs my-4 shadow-md">
+    <div class="bg-white h-[400px] group rounded-lg relative overflow-hidden">
+        <img [src]="product.image" class="w-full h-full object-center object-contain" [alt]="product.title" />
+        <div
+            class="bg-gray-300/10 rounded-md backdrop-blur-lg text-center absolute bottom-0 w-full px-2 translate-y-full group-hover:translate-y-0 duration-200">
+            <ul class="py-3 px-1 ">
+                <li>
+                    <a class="text-3xl transition-all ease-in-out duration-500 text-black dark:text-[#B28A59] " [routerLink]="['/productDetails',product.id]"><i
+                            class=" fa fa-eye"></i> View</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="p-4 dark:text-white tracking-wider font-medium text-black">
+        <h3 class="text-lg font-bold">{{product.title.split(' ').slice(0, 2).join(' ')}}</h3>
+        <p class="">price: {{product.price}}$</p>
+    </div>
+</div>

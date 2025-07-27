@@ -1,4 +1,4 @@
-<nav class="bg-white border-b border-b-gray-200 dark:bg-[#B28A59]">
+<nav class="bg-white z-30 fixed w-full shadow-lg dark:border-none border-b border-b-gray-200 dark:bg-[#B28A59]">
     <!-- logo -->
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a class="flex items-center space-x-1 rtl:space-x-reverse">
@@ -10,9 +10,7 @@
                 <text x="60" y="88" text-anchor="middle" font-size="48" font-family="Georgia, serif"
                     class="fill-[#2A2A2A] dark:fill-white" font-weight="bold">G</text>
             </svg>
-
-
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">Gallexa</span>
+            <span class="self-center text-2xl font-semibold font-mono whitespace-nowrap text-black dark:text-white">Gallexa</span>
         </a>
 
 
@@ -36,46 +34,24 @@
             <ul
                 class="font-medium gap-y-4 flex flex-col mt-6 py-3 rounded-lg bg-gray-50 md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:md:bg-transparent md:bg-transparent dark:bg-[#ba966a]  md:shadow-none shadow-md">
                 <li>
-                    <a href="#" class="block px-3 text-black rounded-sm md:bg-transparent  md:p-0 dark:text-white"
+                    <a routerLink="home" class="block px-3 text-black rounded-sm md:bg-transparent  md:p-0 dark:text-white"
                         aria-current="page">Home</a>
                 </li>
                 <li>
-                    <a href="#" class="block px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">About</a>
+                    <a routerLink="productList" class="block px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">Products</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">Services</a>
+                    <a 
+                        class="block cursor-pointer px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">About</a>
                 </li>
                 <li>
-                    <a href="#" class="block px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">Pricing</a>
-                </li>
-                <li>
-                    <a href="#" class="block px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">Contact</a>
-                </li>
-                <li class="flex-col md:flex-row">
-                    <button type="button"
-                        class="relative inline-flex items-center p-2 text-sm font-medium text-center text-black dark:text-white">
-                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
-                        <span class="sr-only">Cart</span>
-                        <div
-                            class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-green-400 border-2 border-gray-400 rounded-full -top-4 -end-2 dark:border-gray-900">
-                            20</div>
-                    </button>
-                    <button type="button"
-                        class="relative inline-flex items-center p-2 text-sm font-medium text-center text-black dark:text-white">
-                        <i class="fa-solid fa-heart fa-xl"></i>
-                        <span class="sr-only">Cart</span>
-                        <div
-                            class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-600 border-2 border-gray-400 rounded-full -top-4 -end-2 dark:border-gray-900">
-                            20</div>
-                    </button>
-
+                    <a class="block cursor-pointer px-3 text-black rounded-sm md:border-0  md:p-0 dark:text-white">Contact</a>
                 </li>
                 <li>
                     <button type="button" (click)="toggleDarkMode()"
                         class="inline-flex items-center p-2 text-sm font-medium text-center text-black dark:text-white">
                         <i class="fa-solid fa-lg dark:text-white" [class]="isDarkMode ? 'fa-moon' : 'fa-sun'"></i>
-                        <span class="sr-only">Cart</span>
+                        <span class="sr-only">darkMode</span>
                     </button>
                 </li>
 
