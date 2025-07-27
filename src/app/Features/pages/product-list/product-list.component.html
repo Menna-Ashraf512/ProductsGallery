@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    @let filteredProducts = (secondArrayProducts | search:text);
+    @let filteredProducts = (products | search:text);
 
     @if (filteredProducts.length > 0) {
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">

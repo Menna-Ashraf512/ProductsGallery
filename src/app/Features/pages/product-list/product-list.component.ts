@@ -51,6 +51,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked {
   // sort
   sortByNameZToA() {
     this.products.sort((a, b) => b.title.localeCompare(a.title));
+    console.log('ddddd')
   }
   sortByNameAToZ() {
     this.products.sort((a, b) => a.title.localeCompare(b.title));
