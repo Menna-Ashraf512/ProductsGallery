@@ -1,14 +1,13 @@
 @if(detailsProduct){
-<section>
-    <div class="container pt-40 pb-10">
-        <h1 class="text-center text-3xl font-bold text-main mt-2">Details Product</h1>
-        <div class="grid grid-cols-12 gap-4 place-items-center">
+<section class="h-screen mt-40">
+    <div class="container">
+        <div class="grid sm:grid-cols-12 gap-4 place-content-center place-items-center">
             <div class="col-span-3 w-full">
                 <img class="rounded-lg" [src]="detailsProduct.image">
             </div>
             <div class="col-span-9 w-full">
                 <div class="flex flex-col gap-y-4">
-                    <h2>{{detailsProduct.title}}</h2>
+                    <h2 class="text-3xl">{{detailsProduct.title}}</h2>
                     <p class="text-slate-500 dark:text-green-50">{{detailsProduct.description}}</p>
                     <h3> {{detailsProduct.category}}</h3>
                     <div class="flex justify-between mb-3">
